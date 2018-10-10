@@ -4,3 +4,6 @@
 .gradle
 
 .data
+
+repo/out/
+client/out/
