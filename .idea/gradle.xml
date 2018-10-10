@@ -25,6 +25,17 @@
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
       </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/repo" />
+        <option name="gradleHome" value="/Library/Tools/gradle" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/repo" />
+          </set>
+        </option>
+        <option name="resolveModulePerSourceSet" value="false" />
+      </GradleProjectSettings>
     </option>
   </component>
 </project>
