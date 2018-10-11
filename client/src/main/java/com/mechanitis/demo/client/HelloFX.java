@@ -41,7 +41,7 @@ public class HelloFX extends Application {
 
 
         // let's go!
-//        primaryStage.setScene(scene);
+        primaryStage.setScene(scene);
         primaryStage.show();
     }
 
