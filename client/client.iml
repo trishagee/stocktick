@@ -15,7 +15,9 @@
     </content>
     <orderEntry type="jdk" jdkName="11" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Gradle: org.openjfx:javafx-fxml:11:mac" level="project" />
     <orderEntry type="library" name="Gradle: org.openjfx:javafx-controls:11:mac" level="project" />
+    <orderEntry type="library" name="Gradle: org.openjfx:javafx-controls:11" level="project" />
     <orderEntry type="library" name="Gradle: org.openjfx:javafx-graphics:11:mac" level="project" />
     <orderEntry type="library" name="Gradle: org.openjfx:javafx-graphics:11" level="project" />
     <orderEntry type="library" name="Gradle: org.openjfx:javafx-base:11:mac" level="project" />
