@@ -32,6 +32,7 @@ dependencies {
 }
 
 //because Java 9
+// not really sure why we need this if we're modular, but it doesn't seem to work from the command line without it.
 compileJava {
     doFirst {
         options.compilerArgs = [
