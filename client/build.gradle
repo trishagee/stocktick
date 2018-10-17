@@ -30,6 +30,8 @@ dependencies {
     compile "org.openjfx:javafx-graphics:11:$platform"
     compile "org.openjfx:javafx-controls:11:$platform"
     compile "org.openjfx:javafx-fxml:11:$platform"
+
+    compile 'org.eclipse.jetty.websocket:javax-websocket-server-impl:9.4.6.v20170531'
 }
 
 //because Java 9

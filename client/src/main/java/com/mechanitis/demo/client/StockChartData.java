@@ -18,11 +18,13 @@ public class StockChartData implements Flow.Subscriber<String> {
 
         @Override
         public void onSubscribe(Flow.Subscription subscription) {
+                System.out.println(subscription);
             subscription.request(Long.MAX_VALUE);
         }
 
         @Override
         public void onNext(String price) {
+                System.out.println("price = [" + price + "]");
 //            if (mood.equals("HAPPY")) {
 //                int x = now().getMinute();
 //
