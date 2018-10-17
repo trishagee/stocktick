@@ -2,47 +2,40 @@ package com.mechanitis.demo.client;
 
 import javafx.scene.chart.XYChart;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.concurrent.Flow;
 
-import static java.time.LocalTime.now;
-
 public class StockChartData implements Flow.Subscriber<String> {
-        private final XYChart.Series<String, Double> dataSeries = new XYChart.Series<>();
-        private final Map<Integer, Integer> minuteToDataPosition = new HashMap<>();
+    private XYChart.Series<String, Number> data = new XYChart.Series<>();
+    private long tick = 0;
 
-        public StockChartData() {
-            int nowMinute = now().getMinute();
-        }
+    XYChart.Series<String, Number> getData() {
+        return data;
+    }
 
-        @Override
-        public void onSubscribe(Flow.Subscription subscription) {
-                System.out.println(subscription);
-            subscription.request(Long.MAX_VALUE);
-        }
+    public StockChartData() {
+    }
 
-        @Override
-        public void onNext(String price) {
-                System.out.println("price = [" + price + "]");
-//            if (mood.equals("HAPPY")) {
-//                int x = now().getMinute();
-//
-//                Integer dataIndex = minuteToDataPosition.get(x);
-//                XYChart.Data<String, Double> barForNow = dataSeries.getData().get(dataIndex);
-//                barForNow.setYValue(barForNow.getYValue() + 1);
-//            }
-        }
+    @Override
+    public void onSubscribe(Flow.Subscription subscription) {
+        System.out.println(subscription);
+        subscription.request(Long.MAX_VALUE);
+    }
 
-        @Override
-        public void onError(Throwable throwable) {
+    @Override
+    public void onNext(String price) {
+        System.out.println("price = [" + price + "]");
+        data.getData().add(new XYChart.Data<>(String.valueOf(tick++), Integer.valueOf(price)));
+    }
 
-        }
+    @Override
+    public void onError(Throwable throwable) {
 
-        @Override
-        public void onComplete() {
+    }
 
-        }
+    @Override
+    public void onComplete() {
+
+    }
 
 }
 

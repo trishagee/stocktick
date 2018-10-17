@@ -29,7 +29,7 @@ public class StockTicker extends Application {
 
         // wire up the models to the controllers
         StockController controller = loader.getController();
-//        dashboardController.setData(chartData);
+        controller.setData(chartData);
 
         // let's go!
         primaryStage.setScene(scene);
