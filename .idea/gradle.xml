@@ -26,6 +26,17 @@
         <option name="resolveModulePerSourceSet" value="false" />
       </GradleProjectSettings>
       <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/com.mechanitis.demo.sense.servicestub" />
+        <option name="gradleHome" value="/Library/Tools/gradle" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/com.mechanitis.demo.sense.servicestub" />
+          </set>
+        </option>
+        <option name="resolveModulePerSourceSet" value="false" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
         <option name="distributionType" value="WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/repo" />
         <option name="gradleHome" value="/Library/Tools/gradle" />
