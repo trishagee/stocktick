@@ -1,4 +1,4 @@
-package com.mechanitis.demo.client.stock;
+package com.mechanitis.demo.client;
 
 import javafx.scene.chart.XYChart;
 
