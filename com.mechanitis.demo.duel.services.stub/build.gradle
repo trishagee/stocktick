@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+}
+
+apply plugin: 'application'
+
+group 'com.mechanitis.demo'
+version '0.0.1-SNAPSHOT'
+
+sourceCompatibility = JavaVersion.VERSION_11
+
+mainClassName = 'com.mechanitis.demo.duel.services.stub.ExampleClient'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'io.rsocket:rsocket-core:0.11.5'
+    implementation 'io.rsocket:rsocket-transport-netty:0.11.8'
+    implementation('io.projectreactor:reactor-core:3.2.1.RELEASE')
+
+}

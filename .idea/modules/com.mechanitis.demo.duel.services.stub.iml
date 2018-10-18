@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id="com.mechanitis.demo.duel.services.stub" external.linked.project.path="$MODULE_DIR$/../../com.mechanitis.demo.duel.services.stub" external.root.project.path="$MODULE_DIR$/../../com.mechanitis.demo.duel.services.stub" external.system.id="GRADLE" external.system.module.group="com.mechanitis.demo" external.system.module.version="0.0.1-SNAPSHOT" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_11">
+    <output url="file://$MODULE_DIR$/../../com.mechanitis.demo.duel.services.stub/out/production/classes" />
+    <output-test url="file://$MODULE_DIR$/../../com.mechanitis.demo.duel.services.stub/out/test/classes" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../com.mechanitis.demo.duel.services.stub">
+      <sourceFolder url="file://$MODULE_DIR$/../../com.mechanitis.demo.duel.services.stub/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../com.mechanitis.demo.duel.services.stub/src/test/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../com.mechanitis.demo.duel.services.stub/src/main/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../../com.mechanitis.demo.duel.services.stub/src/test/resources" type="java-test-resource" />
+      <excludeFolder url="file://$MODULE_DIR$/../../com.mechanitis.demo.duel.services.stub/.gradle" />
+      <excludeFolder url="file://$MODULE_DIR$/../../com.mechanitis.demo.duel.services.stub/build" />
+      <excludeFolder url="file://$MODULE_DIR$/../../com.mechanitis.demo.duel.services.stub/out" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Gradle: io.rsocket:rsocket-transport-netty:0.11.8" level="project" />
+    <orderEntry type="library" name="Gradle: io.rsocket:rsocket-core:0.11.8" level="project" />
+    <orderEntry type="library" name="Gradle: io.projectreactor.netty:reactor-netty:0.8.0.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: io.projectreactor:reactor-core:3.2.1.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-codec-http2:4.1.29.Final" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-handler:4.1.29.Final" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-transport-native-epoll:4.1.29.Final:linux-x86_64" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-handler-proxy:4.1.29.Final" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-codec-http:4.1.29.Final" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-codec-socks:4.1.29.Final" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-codec:4.1.29.Final" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-transport-native-unix-common:4.1.29.Final" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-transport:4.1.29.Final" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-buffer:4.1.29.Final" level="project" />
+    <orderEntry type="library" name="Gradle: org.jctools:jctools-core:2.1.2" level="project" />
+    <orderEntry type="library" name="Gradle: org.slf4j:slf4j-api:1.7.25" level="project" />
+    <orderEntry type="library" name="Gradle: org.reactivestreams:reactive-streams:1.0.2" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-resolver:4.1.29.Final" level="project" />
+    <orderEntry type="library" name="Gradle: io.netty:netty-common:4.1.29.Final" level="project" />
+  </component>
+</module>
