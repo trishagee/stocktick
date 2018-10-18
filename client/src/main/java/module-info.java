@@ -6,6 +6,5 @@ module client {
     requires spring.webflux;
     requires reactor.core;
 
-    exports com.mechanitis.demo.client to javafx.graphics;
-    opens com.mechanitis.demo.client;
+    exports com.mechanitis.demo.client to javafx.graphics, javafx.fxml;
 }

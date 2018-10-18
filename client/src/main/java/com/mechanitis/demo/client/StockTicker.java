@@ -21,12 +21,7 @@ public class StockTicker extends Application {
     public void start(Stage primaryStage) throws Exception {
         // all models created in advance
         SymbolData chartData = new SymbolData();
-
-        // wire up the models to the services they're getting the data from
-//        ClientEndpoint endpoint = new ClientEndpoint("ws://localhost:8083/MDB/");
-//        endpoint.subscribe(chartData);
         connect(chartData);
-
 
         // initialise the UI
         URL resource = getClass().getResource("/com/mechanitis/demo/client/stock-ticker.fxml");
