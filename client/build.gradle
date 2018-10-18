@@ -32,6 +32,11 @@ dependencies {
     compile "org.openjfx:javafx-fxml:11:$platform"
 
     compile 'org.eclipse.jetty.websocket:javax-websocket-server-impl:9.4.6.v20170531'
+
+    implementation 'org.springframework:spring-webflux:5.0.9.RELEASE'
+    implementation 'io.projectreactor:reactor-core:3.2.1.RELEASE'
+    implementation 'io.projectreactor.ipc:reactor-netty:0.7.10.RELEASE'
+
 }
 
 //because Java 9
