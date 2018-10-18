@@ -1,19 +1,16 @@
 package com.mechanitis.demo.client;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.scene.chart.XYChart;
 
 import java.util.concurrent.Flow;
 
-public class StockChartData implements Flow.Subscriber<String> {
-    private XYChart.Series<String, Number> data = new XYChart.Series<>();
+import static javafx.application.Platform.runLater;
+
+public class SymbolData implements Flow.Subscriber<String> {
+    private final ObservableList<XYChart.Data<String, Number>> data = FXCollections.observableArrayList();
     private long tick = 0;
-
-    XYChart.Series<String, Number> getData() {
-        return data;
-    }
-
-    public StockChartData() {
-    }
 
     @Override
     public void onSubscribe(Flow.Subscription subscription) {
@@ -24,7 +21,11 @@ public class StockChartData implements Flow.Subscriber<String> {
     @Override
     public void onNext(String price) {
         System.out.println("price = [" + price + "]");
-        data.getData().add(new XYChart.Data<>(String.valueOf(tick++), Integer.valueOf(price)));
+        runLater(() -> data.add(new XYChart.Data<>(String.valueOf(tick++), Integer.valueOf(price))));
+    }
+
+    ObservableList<XYChart.Data<String, Number>> getData() {
+        return data;
     }
 
     @Override

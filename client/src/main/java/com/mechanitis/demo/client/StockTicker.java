@@ -13,7 +13,7 @@ public class StockTicker extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         // all models created in advance
-        StockChartData chartData = new StockChartData();
+        SymbolData chartData = new SymbolData();
 
         // wire up the models to the services they're getting the data from
         ClientEndpoint endpoint = new ClientEndpoint("ws://localhost:8083/MDB/");
