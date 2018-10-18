@@ -4,7 +4,14 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import org.springframework.web.reactive.socket.WebSocketMessage;
+import org.springframework.web.reactive.socket.WebSocketSession;
+import org.springframework.web.reactive.socket.client.ReactorNettyWebSocketClient;
+import org.springframework.web.reactive.socket.client.WebSocketClient;
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
+import java.net.URI;
 import java.net.URL;
 
 
@@ -16,8 +23,9 @@ public class StockTicker extends Application {
         SymbolData chartData = new SymbolData();
 
         // wire up the models to the services they're getting the data from
-        ClientEndpoint endpoint = new ClientEndpoint("ws://localhost:8083/MDB/");
-        endpoint.subscribe(chartData);
+//        ClientEndpoint endpoint = new ClientEndpoint("ws://localhost:8083/MDB/");
+//        endpoint.subscribe(chartData);
+        connect(chartData);
 
 
         // initialise the UI
@@ -34,6 +42,26 @@ public class StockTicker extends Application {
         // let's go!
         primaryStage.setScene(scene);
         primaryStage.show();
+    }
+
+    private void connect(SymbolData chartData) {
+        WebSocketClient socketClient = new ReactorNettyWebSocketClient();
+
+        URI uri = URI.create("ws://localhost:8083/MDB/");
+
+        socketClient.execute(uri, (WebSocketSession session) -> {
+
+            Mono<WebSocketMessage> out = Mono.just(session.textMessage("test"));
+
+            Flux<String> in = session.receive()
+                                     .map(WebSocketMessage::getPayloadAsText)
+                                     //there's a better way to do this
+                                     .doOnEach(incomingStockTickerString -> chartData.accept(incomingStockTickerString.get()));
+
+            return session.send(out)
+                          .thenMany(in)
+                          .then();
+        }).subscribe();
     }
 
 
