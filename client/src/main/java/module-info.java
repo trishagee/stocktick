@@ -7,4 +7,8 @@ module client {
     requires reactor.core;
 
     exports com.mechanitis.demo.client to javafx.graphics, javafx.fxml;
+
+    //put this into its own directory so we don't have to have reflective access to everything
+    opens com.mechanitis.demo.client.fxmodel to javafx.fxml, javafx.base;
+
 }

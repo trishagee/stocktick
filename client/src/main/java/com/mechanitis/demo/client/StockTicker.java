@@ -23,6 +23,8 @@ public class StockTicker extends Application {
         SymbolData chartData = new SymbolData();
         connect(chartData);
 
+        StockStats stockStats = new StockStats(9.9, 5.4, 4.3, 8.7, 8.9);
+
         // initialise the UI
         URL resource = getClass().getResource("/com/mechanitis/demo/client/dashboard.fxml");
         FXMLLoader loader = new FXMLLoader(resource);
@@ -33,7 +35,7 @@ public class StockTicker extends Application {
         // wire up the models to the controllers
         DashboardController dashboardController = loader.getController();
 //        ChartController controller = loader.getController();
-        dashboardController.setData(chartData);
+        dashboardController.setData(chartData, stockStats);
 
         // let's go!
         primaryStage.setScene(scene);
