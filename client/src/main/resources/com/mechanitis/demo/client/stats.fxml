@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.VBox?>
 <VBox xmlns:fx="http://javafx.com/fxml"
       spacing="10" alignment="CENTER"
-      fx:controller="com.mechanitis.demo.client.StatsController">
+      fx:controller="com.mechanitis.demo.client.fxcontroller.StatsController">
     <TableView fx:id="stats">
         <columns>
             <TableColumn><!--label-->

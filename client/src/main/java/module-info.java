@@ -8,7 +8,8 @@ module client {
 
     exports com.mechanitis.demo.client to javafx.graphics, javafx.fxml;
 
-    //put this into its own directory so we don't have to have reflective access to everything
+    //separate these directories so we don't have to have reflective access to everything
     opens com.mechanitis.demo.client.fxmodel to javafx.fxml, javafx.base;
+    opens com.mechanitis.demo.client.fxcontroller to javafx.fxml;
 
 }

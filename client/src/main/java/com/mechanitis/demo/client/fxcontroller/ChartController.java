@@ -1,5 +1,6 @@
-package com.mechanitis.demo.client;
+package com.mechanitis.demo.client.fxcontroller;
 
+import com.mechanitis.demo.client.data.SymbolData;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -8,7 +9,7 @@ import javafx.scene.chart.XYChart;
 
 public class ChartController {
     @FXML
-    public LineChart<String, Number> chart;
+    private LineChart<String, Number> chart;
 
     //currently only supports a single symbol/series on the chart
     @SuppressWarnings("unchecked")

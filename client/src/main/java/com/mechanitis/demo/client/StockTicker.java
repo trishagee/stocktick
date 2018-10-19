@@ -1,5 +1,8 @@
 package com.mechanitis.demo.client;
 
+import com.mechanitis.demo.client.data.StockStats;
+import com.mechanitis.demo.client.data.SymbolData;
+import com.mechanitis.demo.client.fxcontroller.DashboardController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;

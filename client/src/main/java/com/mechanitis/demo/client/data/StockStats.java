@@ -1,4 +1,4 @@
-package com.mechanitis.demo.client;
+package com.mechanitis.demo.client.data;
 
 import com.mechanitis.demo.client.fxmodel.StockInfoItem;
 import javafx.beans.property.SimpleDoubleProperty;

@@ -1,4 +1,4 @@
-package com.mechanitis.demo.client;
+package com.mechanitis.demo.client.data;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -18,7 +18,7 @@ public class SymbolData implements Consumer<String> {
         runLater(() -> data.add(new XYChart.Data<>(String.valueOf(tick++), Integer.valueOf(price))));
     }
 
-    ObservableList<XYChart.Data<String, Number>> getData() {
+    public ObservableList<XYChart.Data<String, Number>> getData() {
         return data;
     }
 
