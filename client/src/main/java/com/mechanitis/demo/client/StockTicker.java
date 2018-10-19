@@ -24,15 +24,16 @@ public class StockTicker extends Application {
         connect(chartData);
 
         // initialise the UI
-        URL resource = getClass().getResource("/com/mechanitis/demo/client/stock-ticker.fxml");
+        URL resource = getClass().getResource("/com/mechanitis/demo/client/dashboard.fxml");
         FXMLLoader loader = new FXMLLoader(resource);
         primaryStage.setTitle("Stock Prices Dashboard");
         Scene scene = new Scene(loader.load(), 900, 700);
         scene.getStylesheets().add(getClass().getResource("/com/mechanitis/demo/client/default.css").toString());
 
         // wire up the models to the controllers
-        StockController controller = loader.getController();
-        controller.setData(chartData);
+        DashboardController dashboardController = loader.getController();
+//        ChartController controller = loader.getController();
+        dashboardController.setData(chartData);
 
         // let's go!
         primaryStage.setScene(scene);

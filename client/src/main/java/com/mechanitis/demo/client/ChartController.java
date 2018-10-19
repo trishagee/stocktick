@@ -6,7 +6,7 @@ import javafx.fxml.FXML;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.XYChart;
 
-public class StockController {
+public class ChartController {
     @FXML
     public LineChart<String, Number> stockticker;
 
