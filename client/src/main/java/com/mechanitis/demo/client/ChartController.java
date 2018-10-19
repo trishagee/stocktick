@@ -8,7 +8,7 @@ import javafx.scene.chart.XYChart;
 
 public class ChartController {
     @FXML
-    public LineChart<String, Number> stockticker;
+    public LineChart<String, Number> chart;
 
     //currently only supports a single symbol/series on the chart
     @SuppressWarnings("unchecked")
@@ -16,6 +16,6 @@ public class ChartController {
         final XYChart.Series<String, Number> series = new XYChart.Series<>();
         series.setData(chartData.getData());
         final ObservableList<XYChart.Series<String, Number>> seriesList = FXCollections.observableArrayList(series);
-        stockticker.setData(seriesList);
+        chart.setData(seriesList);
     }
 }
