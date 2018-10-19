@@ -6,6 +6,8 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 public class StockStats {
+    private final ObservableList<StockInfoItem> stockInfoItems = FXCollections.observableArrayList();
+
     //needs to be the JavaFX property here as this is the one that's going to be watched and changed.
     private final SimpleDoubleProperty maxPrice;
     private final SimpleDoubleProperty minPrice;
@@ -19,15 +21,26 @@ public class StockStats {
         this.averagePrice = new SimpleDoubleProperty(averagePrice);
         this.openPrice = new SimpleDoubleProperty(openPrice);
         this.closePrice = new SimpleDoubleProperty(closePrice);
+        stockInfoItems.add(new StockInfoItem("Min Price", this.minPrice));
+        stockInfoItems.add(new StockInfoItem("Max Price", this.maxPrice));
+        stockInfoItems.add(new StockInfoItem("Average Price", this.averagePrice));
+        stockInfoItems.add(new StockInfoItem("Open Price", this.openPrice));
+        stockInfoItems.add(new StockInfoItem("Close Price", this.closePrice));
     }
 
     public ObservableList<StockInfoItem> getData() {
-        ObservableList<StockInfoItem> stockInfoItems = FXCollections.observableArrayList();
-        stockInfoItems.add(new StockInfoItem("Min Price", minPrice));
-        stockInfoItems.add(new StockInfoItem("Max Price", maxPrice));
-        stockInfoItems.add(new StockInfoItem("Average Price", averagePrice));
-        stockInfoItems.add(new StockInfoItem("Open Price", openPrice));
-        stockInfoItems.add(new StockInfoItem("Close Price", closePrice));
         return stockInfoItems;
+    }
+
+    void update(double price) {
+        System.out.println("StockStats.update");
+        checkAndUpdateMaxPrice(price);
+    }
+
+    private void checkAndUpdateMaxPrice(double price) {
+        if (maxPrice.get() < price) {
+            System.out.println("maxprice = [" + price + "]");
+            maxPrice.set(price);
+        }
     }
 }

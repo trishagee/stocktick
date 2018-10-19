@@ -10,6 +10,7 @@ public class StockInfoItem {
     public StockInfoItem(String label, SimpleDoubleProperty value) {
         this.label = new SimpleStringProperty(label);
         this.value = value;
+        System.out.println("value = " + value);
     }
 
     //IntelliJ generates both the property and getter methods!

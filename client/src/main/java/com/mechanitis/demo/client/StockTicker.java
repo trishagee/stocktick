@@ -23,10 +23,9 @@ public class StockTicker extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         // all models created in advance
-        SymbolData chartData = new SymbolData();
+        StockStats stockStats = new StockStats(0, 5.4, 4.3, 8.7, 8.9);
+        SymbolData chartData = new SymbolData(stockStats);
         connect(chartData);
-
-        StockStats stockStats = new StockStats(9.9, 5.4, 4.3, 8.7, 8.9);
 
         // initialise the UI
         URL resource = getClass().getResource("/com/mechanitis/demo/client/dashboard.fxml");
