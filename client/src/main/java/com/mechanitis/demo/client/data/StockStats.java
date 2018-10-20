@@ -14,6 +14,7 @@ public class StockStats {
     private final SimpleDoubleProperty averagePrice;
     private final SimpleDoubleProperty openPrice;
     private final SimpleDoubleProperty closePrice;
+    private int numberOfPrices = 0;
 
     public StockStats(double maxPrice, double minPrice, double averagePrice, double openPrice, double closePrice) {
         this.maxPrice = new SimpleDoubleProperty(maxPrice);
@@ -35,6 +36,7 @@ public class StockStats {
     void update(double price) {
         checkAndUpdateMaxPrice(price);
         checkAndUpdateMinPrice(price);
+        updateAveragePrice(price);
     }
 
     private void checkAndUpdateMaxPrice(double price) {
@@ -48,4 +50,13 @@ public class StockStats {
             minPrice.set(price);
         }
     }
+
+    //this needs a test
+    private void updateAveragePrice(double price) {
+        double prevMean = averagePrice.get();
+        double newMean = ((prevMean * numberOfPrices) + price) / ++numberOfPrices;
+        averagePrice.set(newMean);
+    }
+    //also need to change the UI to limit this to 2dp
+
 }
