@@ -5,18 +5,15 @@ import javafx.collections.ObservableList;
 import javafx.scene.chart.XYChart;
 import javafx.scene.chart.XYChart.Data;
 
-import java.util.*;
 import java.util.function.Consumer;
 
 import static javafx.application.Platform.runLater;
 
 public class SymbolData implements Consumer<String> {
-    //makes sense for this to be an array actually, since I don't want to change
-    //the length I want to replace the items
-    //although... actually that's not true because I need to add to the end and remove from the front
-    private final Queue data = new ArrayDeque<Data<String, Number>>(30);
-    private final ObservableList<Data<String, Number>> observableData = FXCollections.observableArrayList(data);
+    private static final int MAX_NUMBER_OF_ITEMS = 30;
+    private final ObservableList<XYChart.Data<String, Number>> data = FXCollections.observableArrayList();
     private final StockStats stockStats;
+    //need a better value for x axis
     private long tick = 0;
     private double maxPrice = 0;
 
@@ -26,17 +23,22 @@ public class SymbolData implements Consumer<String> {
 
     @Override
     public void accept(String message) {
+        //really would prefer to get this message as a double straight away
         System.out.println("price = [" + message + "]");
         Double price = Double.valueOf(message);
         stockStats.update(price);
-        System.out.println("data.size() = " + data.size());
-        runLater(() -> {
-            data.add(new Data<String, Number>(String.valueOf(tick++), price));
-        });
+        runLater(() -> addPriceToChart(price));
     }
 
-    public ObservableList<Data<String, Number>> getData() {
-        return observableData;
+    private void addPriceToChart(Double price) {
+        data.add(new Data<>(String.valueOf(tick++), price));
+        if (data.size() > MAX_NUMBER_OF_ITEMS) {
+            data.remove(0);
+        }
+    }
+
+    public ObservableList<XYChart.Data<String, Number>> getData() {
+        return data;
     }
 
 }
