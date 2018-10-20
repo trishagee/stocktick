@@ -23,7 +23,7 @@ public class StockTicker extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         // all models created in advance
-        StockStats stockStats = new StockStats(0, 5.4, 4.3, 8.7, 8.9);
+        StockStats stockStats = new StockStats(0, 10, 4.3, 8.7, 8.9);
         SymbolData chartData = new SymbolData(stockStats);
         connect(chartData);
 

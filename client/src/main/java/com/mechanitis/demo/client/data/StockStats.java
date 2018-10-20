@@ -33,14 +33,19 @@ public class StockStats {
     }
 
     void update(double price) {
-        System.out.println("StockStats.update");
         checkAndUpdateMaxPrice(price);
+        checkAndUpdateMinPrice(price);
     }
 
     private void checkAndUpdateMaxPrice(double price) {
         if (maxPrice.get() < price) {
-            System.out.println("maxprice = [" + price + "]");
             maxPrice.set(price);
+        }
+    }
+
+    private void checkAndUpdateMinPrice(double price) {
+        if (minPrice.get() > price) {
+            minPrice.set(price);
         }
     }
 }
