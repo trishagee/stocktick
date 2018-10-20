@@ -14,11 +14,7 @@ public class StockInfoItem {
     }
 
     //IntelliJ generates both the property and getter methods!
-    public SimpleStringProperty getLabelProperty() {
-        return label;
-    }
-
-    public SimpleDoubleProperty getValueProperty() {
+    public SimpleDoubleProperty valueProperty() {
         return value;
     }
 
