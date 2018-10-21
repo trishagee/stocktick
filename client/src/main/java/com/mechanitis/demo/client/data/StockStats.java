@@ -12,21 +12,15 @@ public class StockStats {
     private final SimpleDoubleProperty maxPrice;
     private final SimpleDoubleProperty minPrice;
     private final SimpleDoubleProperty averagePrice;
-    private final SimpleDoubleProperty openPrice;
-    private final SimpleDoubleProperty closePrice;
     private int numberOfPrices = 0;
 
-    public StockStats(double maxPrice, double minPrice, double averagePrice, double openPrice, double closePrice) {
-        this.maxPrice = new SimpleDoubleProperty(maxPrice);
-        this.minPrice = new SimpleDoubleProperty(minPrice);
-        this.averagePrice = new SimpleDoubleProperty(averagePrice);
-        this.openPrice = new SimpleDoubleProperty(openPrice);
-        this.closePrice = new SimpleDoubleProperty(closePrice);
+    public StockStats() {
+        this.maxPrice = new SimpleDoubleProperty(0);
+        this.minPrice = new SimpleDoubleProperty(Double.MAX_VALUE);
+        this.averagePrice = new SimpleDoubleProperty(0);
         stockInfoItems.add(new StockInfoItem("Min Price", this.minPrice));
         stockInfoItems.add(new StockInfoItem("Max Price", this.maxPrice));
         stockInfoItems.add(new StockInfoItem("Average Price", this.averagePrice));
-        stockInfoItems.add(new StockInfoItem("Open Price", this.openPrice));
-        stockInfoItems.add(new StockInfoItem("Close Price", this.closePrice));
     }
 
     public ObservableList<StockInfoItem> getData() {

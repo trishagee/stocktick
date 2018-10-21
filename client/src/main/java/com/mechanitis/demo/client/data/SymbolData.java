@@ -15,7 +15,6 @@ public class SymbolData implements Consumer<String> {
     private final StockStats stockStats;
     //need a better value for x axis
     private long tick = 0;
-    private double maxPrice = 0;
 
     public SymbolData(StockStats stockStats) {
         this.stockStats = stockStats;
